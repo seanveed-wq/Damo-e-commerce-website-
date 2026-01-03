@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOBE Elite | Shoe Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Kobe Elite</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Shop</a></li>
+            <li><a href="#about">About</a></li>
+            <li class="cart-btn" onclick="toggleCart()">
+                <span>🛒</span> Cart (<span id="cart-count">0</span>)
+            </li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2 class="fade-in">PREMIUM COLLECTION</h2>
+            <h1 class="glitch-text">KOBE ELITE</h1>
+            <p>Elevate your game with the next generation of performance footwear.</p>
+            <a href="#products" class="cta-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h2 class="section-title">New Arrivals</h2>
+        <div class="product-grid" id="product-list">
+            <div class="card" data-id="1" data-name="Nike Air Max" data-price="120">
+                <div class="card-img">
+                    <img src="https://parspng.com/wp-content/uploads/2023/02/shoespng.parspng.com-6.png" alt="Shoe">
+                </div>
+                <h3>Nike Air Max</h3>
+                <p class="price">$120.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card" data-id="2" data-name="Adidas Superstar" data-price="100">
+                <div class="card-img">
+                    <img src="https://parspng.com/wp-content/uploads/2023/02/shoespng.parspng.com-3.png" alt="Shoe">
+                </div>
+                <h3>Adidas Superstar</h3>
+                <p class="price">$100.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card" data-id="3" data-name="Puma Runner" data-price="90">
+                <div class="card-img">
+                    <img src="https://parspng.com/wp-content/uploads/2023/02/shoespng.parspng.com-12.png" alt="Shoe">
+                </div>
+                <h3>Puma Runner</h3>
+                <p class="price">$90.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-container">
+            <h2>Our Story</h2>
+            <p>We don't just sell shoes; we sell performance. Founded on the principles of speed, durability, and style, Kobe Elite brings you the most exclusive footwear on the planet.</p>
+        </div>
+    </section>
+
+    <div id="cart-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Your Cart</h3>
+            <button onclick="toggleCart()" class="close-btn">&times;</button>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-total">
+            Total: $<span id="total-price">0</span>
+        </div>
+        
+        <div class="payment-method">
+            <h4>Payment Method</h4>
+            <div class="payment-box selected">
+                <input type="radio" checked>
+                <label>Cash on Delivery (COD)</label>
+            </div>
+        </div>
+        <button class="checkout-btn" onclick="processPayment()">Place Order</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 KOBE ELITE SHOE STORE. DESIGNED FOR THE BOLD.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
