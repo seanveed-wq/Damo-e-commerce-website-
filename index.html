@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Store Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">SHOE<span>STORE</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="login.html" class="login-btn">Sign In</a></li>
+            </ul>
+            <div class="cart-status" onclick="location.href='#checkout'">
+                Bag (<span id="cart-count">0</span>)
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1>BRING THE ATTACK</h1>
+            <p>New Season, New Speed.</p>
+            <a href="#shop" class="shop-btn">Shop Now</a>
+        </div>
+    </header>
+
+    <section class="shop-grid" id="shop">
+        <h2 class="section-title">SPOTLIGHT</h2>
+        <div class="products-container" id="product-display">
+            </div>
+    </section>
+
+    <section id="checkout" class="checkout-section">
+        <div class="checkout-card">
+            <h2>Order Summary</h2>
+            <div id="cart-items">Your bag is empty.</div>
+            <hr>
+            <div class="total">Total: $<span id="grand-total">0</span></div>
+            <button class="pay-btn" onclick="orderNow()">Cash on Delivery</button>
+        </div>
+    </section>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+  </html>
+  
