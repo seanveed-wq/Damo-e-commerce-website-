@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KOBE ELITE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter&display=swap" rel="stylesheet">
+
+<style>
+/* ===== CSS ===== */
+body{
+  margin:0;
+  font-family:Inter,sans-serif;
+  background:#050505;
+  color:white;
+}
+
+nav{
+  padding:20px;
+  background:black;
+  text-align:center;
+  font-family:Orbitron;
+  font-size:24px;
+}
+nav span{color:#8a2be2;}
+
+.hero{
+  text-align:center;
+  padding:100px 20px;
+}
+.hero h1{color:#faff00;}
+
+.shop{
+  padding:40px;
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.card{
+  background:#121212;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+}
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+.card h3{color:#00d4ff;}
+
+footer{
+  padding:30px;
+  text-align:center;
+  background:#000;
+  margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  KOBE<span>ELITE</span>
+</nav>
+
+<section class="hero">
+  <h1>BRING THE ATTACK</h1>
+  <p>Mamba Mentality. Elite Performance.</p>
+</section>
+
+<section class="shop">
+  <h2>PRODUCTS</h2>
+  <div class="products" id="products">
+    Loading...
+  </div>
+</section>
+
+<footer>
+  <p>Contact: support@kobeelite.com</p>
+  <p>© 2026 KOBE ELITE</p>
+</footer>
+
+<!-- ===== JAVASCRIPT + FIREBASE ===== -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+/* 🔥 FIREBASE CONFIG */
+const firebaseConfig = {
+  apiKey: "AIzaSyBN8-fk1vNioM13QCYoHujzbD6Ax4Zb5-U",
+  authDomain: "damo-e-commerce-website-6a685.firebaseapp.com",
+  projectId: "damo-e-commerce-website-6a685",
+  storageBucket: "damo-e-commerce-website-6a685.appspot.com",
+  messagingSenderId: "377864917220",
+  appId: "1:377864917220:web:8ca3e87c37761bb0b4dcf1"
+};
+
+/* INIT */
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+/* LOAD PRODUCTS */
+const box = document.getElementById("products");
+box.innerHTML = "";
+
+const snap = await getDocs(collection(db,"Product"));
+snap.forEach(doc=>{
+  const p = doc.data();
+  box.innerHTML += `
+    <div class="card">
+      <img src="${p.img}">
+      <h3>${p.name}</h3>
+      <p>$${p.price}</p>
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>
