@@ -47,3 +47,40 @@ function orderNow() {
 }
 
 window.onload = loadItems;
+// --- Firebase Registration Logic ---
+
+function handleSignUp(event) {
+    event.preventDefault(); // Page refresh hone se rokta hai
+    
+    // Form se email aur password lena (Inki IDs login.html mein check karein)
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+        alert("Registration Successful! Welcome to the Squad.");
+        window.location.href = "index.html"; // Home page par bhejna
+    })
+    .catch((error) => {
+        alert("Error: " + error.message); // Agar koi ghalti ho (e.g. weak password)
+    });
+}
+
+// --- Firebase Login Logic ---
+
+function handleLogin(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+        alert("Logged In Successfully!");
+        window.location.href = "index.html";
+    })
+    .catch((error) => {
+        alert("Login Failed: " + error.message);
+    });
+}
+    
