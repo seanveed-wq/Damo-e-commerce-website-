@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KOBE ELITE | Premium Store</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -27,6 +27,14 @@
         </div>
     </header>
 
+    <section id="admin-add" style="background:#111; padding:20px; border-radius:10px; margin:20px; border:1px solid #333;">
+        <h3 style="color:white; font-family:'Orbitron';">ADD NEW PRODUCT</h3>
+        <input type="text" id="p-name" placeholder="Shoe Name" style="margin:5px; padding:10px; width:200px;">
+        <input type="number" id="p-price" placeholder="Price" style="margin:5px; padding:10px; width:100px;">
+        <input type="text" id="p-img" placeholder="Direct Image Link (Ending in .jpg or .png)" style="margin:5px; padding:10px; width:300px;">
+        <button onclick="addNewProduct()" style="background:#00d4ff; padding:10px 20px; cursor:pointer; font-weight:bold; border:none;">ADD TO STORE</button>
+    </section>
+
     <section id="shop" class="shop-grid">
         <h2 class="section-title">SPOTLIGHT</h2>
         <div class="products-container" id="product-display"></div>
@@ -42,8 +50,7 @@
     </section>
 
     <script type="module" src="Firebase-config.js"></script>
-
     <script type="module" src="script.js"></script>
 </body>
-              </html>
-              
+            </html>
+            
