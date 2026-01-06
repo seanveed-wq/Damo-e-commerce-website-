@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login | KOBE ELITE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter&display=swap" rel="stylesheet">
+  <!-- Styles (reuse same file) -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* small overrides for centering login */
+    body { display:flex; align-items:center; justify-content:center; min-height:100vh; }
+    .login-card {
+      background: var(--dark-gray);
+      padding: 32px;
+      border-radius:16px;
+      width:90%;
+      max-width:400px;
+      text-align:center;
+      border:1px solid #333;
+    }
+    .login-card input {
+      width:100%;
+      margin:10px 0;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #222;
+      background:#000;
+      color:#fff;
+    }
+    .login-card button {
+      width:100%;
+      margin-top:14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-card">
+  <h2 style="font-family:'Orbitron'; color:var(--blue);">ADMIN LOGIN</h2>
+  <input type="email" id="admin-email" placeholder="Email">
+  <input type="password" id="admin-pass" placeholder="Password">
+  <button class="login-btn" onclick="loginAdmin()">Login</button>
+</div>
+
+<script type="module">
+import { auth } from './Firebase-config.js';
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+// Change this to your admin email if you want to restrict further
+const ADMIN_EMAIL = "youradmin@gmail.com";
+
+window.loginAdmin = async () => {
+  const email = document.getElementById('admin-email').value;
+  const pass  = document.getElementById('admin-pass').value;
+  try {
+    const userCred = await signInWithEmailAndPassword(auth, email, pass);
+    if (email.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
+      alert("Not authorized.");
+      auth.signOut();
+      return;
+    }
+    // Redirect to admin panel
+    window.location.href = "admin.html";
+  } catch (err) {
+    alert("Login failed: " + err.message);
+  }
+};
+</script>
+
+</body>
+</html>
