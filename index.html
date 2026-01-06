@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KOBE ELITE | Premium Shoes</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">KOBE<span>ELITE</span></div>
+    <ul class="nav-links">
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="login.html" class="login-btn">Admin</a></li>
+    </ul>
+    <div class="cart-box" onclick="toggleCart()">
+      Bag (<span id="cart-count">0</span>)
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero fade-in">
+    <div class="hero-content">
+      <h1>BRING THE ATTACK</h1>
+      <p>Mamba Mentality. Elite Performance.</p>
+      <a href="#shop" class="fancy-btn">Shop Collection</a>
+    </div>
+  </header>
+
+  <!-- Categories -->
+  <section class="categories">
+    <button class="category-btn active" onclick="filterCategory('All')">All</button>
+    <button class="category-btn" onclick="filterCategory('Basketball')">Basketball</button>
+    <button class="category-btn" onclick="filterCategory('Running')">Running</button>
+    <button class="category-btn" onclick="filterCategory('Casual')">Casual</button>
+    <button class="category-btn" onclick="filterCategory('Sports')">Sports</button>
+  </section>
+
+  <!-- Products -->
+  <section id="shop" class="shop-grid">
+    <h2 class="section-title">SPOTLIGHT</h2>
+    <div class="products-container" id="product-display">
+      <!-- Products appear here -->
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-section">
+    <h2 class="section-title">ABOUT KOBE ELITE</h2>
+    <div class="about-content">
+      <img src="https://via.placeholder.com/500x300?text=Elite+Shoes" alt="About" />
+      <p>
+        KOBE ELITE is built for athletes who live the Mamba Mentality.
+        Premium shoes. Elite performance. Zero compromise.
+        Every pair is crafted for comfort, style, and performance.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <h2 class="section-title">CONTACT US</h2>
+    <form id="contact-form">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="fancy-btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cart-sidebar">
+    <h2>Your Bag</h2>
+    <div id="cart-items">Cart is empty</div>
+    <div class="total-box">Total: <span id="grand-total">$0</span></div>
+    <button class="order-btn" onclick="orderNow()">Confirm Order (COD)</button>
+    <button class="close-cart" onclick="toggleCart()">Close</button>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="Firebase-config.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+  </html>
