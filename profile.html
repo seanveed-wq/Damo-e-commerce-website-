@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="User Profile">
+    <title>Profile - ShoeHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="ShoeHub Logo" onerror="this.style.display='none'">
+                    <span>ShoeHub</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="nav-actions">
+                    <button class="icon-btn" id="searchBtn">🔍</button>
+                    <a href="cart.html" class="icon-btn cart-btn">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <a href="profile.html" class="icon-btn active" id="userBtn">👤</a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-layout">
+                <!-- Sidebar -->
+                <aside class="profile-sidebar">
+                    <div class="profile-info">
+                        <div class="profile-avatar">
+                            <span id="userInitials">U</span>
+                        </div>
+                        <h3 id="userName">User Name</h3>
+                        <p id="userEmail">user@email.com</p>
+                    </div>
+                    <nav class="profile-nav">
+                        <a href="#orders" class="profile-nav-link active" data-tab="orders">
+                            📦 My Orders
+                        </a>
+                        <a href="#account" class="profile-nav-link" data-tab="account">
+                            👤 Account Settings
+                        </a>
+                        <a href="#addresses" class="profile-nav-link" data-tab="addresses">
+                            📍 Addresses
+                        </a>
+                        <a href="#wishlist" class="profile-nav-link" data-tab="wishlist">
+                            ❤️ Wishlist
+                        </a>
+                        <button class="profile-nav-link logout-btn" id="logoutBtn">
+                            🚪 Logout
+                        </button>
+                    </nav>
+                </aside>
+
+                <!-- Content -->
+                <div class="profile-content">
+                    <!-- Orders Tab -->
+                    <div class="profile-tab active" id="ordersTab">
+                        <h2>My Orders</h2>
+                        <div id="ordersList">
+                            <div class="loading">Loading orders...</div>
+                        </div>
+                    </div>
+
+                    <!-- Account Tab -->
+                    <div class="profile-tab" id="accountTab">
+                        <h2>Account Settings</h2>
+                        <form id="accountForm" class="profile-form">
+                            <div class="form-group">
+                                <label for="profileName">Full Name</label>
+                                <input type="text" id="profileName">
+                            </div>
+                            <div class="form-group">
+                                <label for="profileEmail">Email</label>
+                                <input type="email" id="profileEmail" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="profilePhone">Phone</label>
+                                <input type="tel" id="profilePhone">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+
+                        <hr>
+
+                        <h3>Change Password</h3>
+                        <form id="passwordForm" class="profile-form">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmNewPassword">Confirm New Password</label>
+                                <input type="password" id="confirmNewPassword">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </form>
+                    </div>
+
+                    <!-- Addresses Tab -->
+                    <div class="profile-tab" id="addressesTab">
+                        <h2>Saved Addresses</h2>
+                        <div id="addressesList">
+                            <p>No saved addresses yet.</p>
+                        </div>
+                        <button class="btn btn-secondary" id="addAddressBtn">Add New Address</button>
+                    </div>
+
+                    <!-- Wishlist Tab -->
+                    <div class="profile-tab" id="wishlistTab">
+                        <h2>My Wishlist</h2>
+                        <div class="products-grid" id="wishlistGrid">
+                            <p>Your wishlist is empty.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Prompt for Non-authenticated Users -->
+    <div class="auth-prompt" id="authPrompt" style="display: none;">
+        <div class="auth-prompt-content">
+            <h2>Please Login</h2>
+            <p>You need to be logged in to view your profile.</p>
+            <a href="login.html" class="btn btn-primary">Login</a>
+            <a href="register.html" class="btn btn-secondary">Create Account</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ShoeHub</h3>
+                    <p>Your trusted destination for premium footwear.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>Email: info@shoehub.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShoeHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+  </html>
