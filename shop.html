@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our complete collection of premium shoes">
+    <title>Shop - ShoeHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="ShoeHub Logo" onerror="this.style.display='none'">
+                    <span>ShoeHub</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="shop.html" class="active">Shop</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="nav-actions">
+                    <button class="icon-btn" id="searchBtn">🔍</button>
+                    <a href="cart.html" class="icon-btn cart-btn">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <a href="profile.html" class="icon-btn" id="userBtn">👤</a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Collection</h1>
+            <p>Discover your perfect pair</p>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="shop-filters">
+                    <div class="filter-section">
+                        <h3>Categories</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="all" checked>
+                                <span>All Products</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="sneakers">
+                                <span>Sneakers</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="formal">
+                                <span>Formal</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="boots">
+                                <span>Boots</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="sandals">
+                                <span>Sandals</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="price" value="0-50">
+                                <span>Under $50</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="price" value="50-100">
+                                <span>$50 - $100</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="price" value="100-150">
+                                <span>$100 - $150</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="price" value="150+">
+                                <span>$150+</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Size</h3>
+                        <div class="filter-options size-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="7">
+                                <span>7</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="8">
+                                <span>8</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="9">
+                                <span>9</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="10">
+                                <span>10</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="11">
+                                <span>11</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="12">
+                                <span>12</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-secondary btn-block" id="clearFilters">Clear Filters</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="shop-content">
+                    <div class="shop-controls">
+                        <div class="results-count">
+                            <span id="resultsCount">Loading...</span>
+                        </div>
+                        <div class="sort-options">
+                            <select id="sortSelect">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="name">Name: A to Z</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded dynamically -->
+                        <div class="loading">Loading products...</div>
+                    </div>
+
+                    <div class="pagination" id="pagination">
+                        <!-- Pagination will be added dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ShoeHub</h3>
+                    <p>Your trusted destination for premium footwear.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>Email: info@shoehub.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShoeHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/products.js"></script>
