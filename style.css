@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            ShopX
+        </div>
+
+        <nav class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Categories</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="icon-btn">❤️</button>
+            <button class="icon-btn">
+                🛒
+                <span class="cart-count">2</span>
+            </button>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Modern Online Store</h1>
+        <p class="hero-subtitle">
+            Best products, best prices, fast delivery
+        </p>
+        <div class="hero-actions">
+            <a href="#" class="btn btn-primary">Shop Now</a>
+            <a href="#" class="btn btn-outline">Explore</a>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <img src="hero.jpg" alt="Hero Image">
+    </div>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section class="featured">
+    <div class="container">
+        <div class="section-header">
+            <h2>Featured Products</h2>
+            <p>Our best selling items</p>
+        </div>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="product.jpg" alt="Product">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Shoes</div>
+                    <h3 class="product-name">Running Shoes</h3>
+                    <div class="product-price">$99</div>
+
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="wishlist-btn">♡</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+<section class="categories">
+    <div class="container">
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">👕</div>
+                <h3>Clothing</h3>
+                <p>Latest fashion</p>
+                <a href="#" class="category-link">View</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>ShopX</h3>
+                <p>Best online shopping experience.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 ShopX. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
