@@ -1,0 +1,101 @@
+/* =============================================
+   CSS STYLE.CSS - COMPLETE CODE
+   ============================================= */
+
+/* RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1e40af;
+    --secondary-color: #64748b;
+    --accent-color: #f59e0b;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --text-color: #1e293b;
+    --text-light: #64748b;
+    --bg-color: #ffffff;
+    --bg-light: #f8fafc;
+    --border-color: #e2e8f0;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+}
+
+/* =========================
+   ORDER STATUS (FIXED)
+   ========================= */
+.order-status.pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.order-status.processing {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.order-status.shipped {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.order-status.delivered {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.footer {
+    background-color: var(--text-color);
+    color: white;
+    padding: 60px 0 20px;
+    margin-top: 80px;
+}
+
+/* =========================
+   MODAL
+   ========================= */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active { display: flex; }
+
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+}
+
+/* =========================
+   UTILITIES
+   ========================= */
+.hidden { display: none !important; }
