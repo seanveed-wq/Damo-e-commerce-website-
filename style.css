@@ -1,0 +1,117 @@
+/* =============================================
+   CSS STYLE.CSS - FIXED & FINAL VERSION
+   ============================================= */
+
+/* RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1e40af;
+    --secondary-color: #64748b;
+    --accent-color: #f59e0b;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --text-color: #1e293b;
+    --text-light: #64748b;
+    --bg-color: #ffffff;
+    --bg-light: #f8fafc;
+    --border-color: #e2e8f0;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+}
+
+/* ================= ORDER STATUS (FIXED) ================= */
+.order-status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.order-status.pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.order-status.processing {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.order-status.shipped {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.order-status.delivered {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+/* ================= MODAL FIX ================= */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active { display: flex; }
+
+/* ================= FILTER :has() FALLBACK ================= */
+@supports not(selector(:has(*))) {
+    .size-options .filter-option input[type="checkbox"]:checked {
+        outline: 2px solid var(--primary-color);
+        background-color: rgba(37, 99, 235, 0.1);
+    }
+
+    .payment-method input:checked {
+        outline: 2px solid var(--primary-color);
+        background-color: rgba(37, 99, 235, 0.05);
+    }
+}
+
+/* ================= ANIMATION PERFORMANCE ================= */
+.product-card,
+.category-card {
+    will-change: transform, opacity;
+}
+
+/* ================= ACCESSIBILITY IMPROVEMENT ================= */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ================= FIXED PRINT ================= */
+@media print {
+    * {
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+}
+
+/* ================= UTILITY ================= */
+.hidden { display: none !important; }
+.visible { display: block !important; }
