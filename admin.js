@@ -533,4 +533,6 @@ window.viewCustomer = async function(customerId) {
     } catch (error) {
         console.error('Error viewing customer:', error);
     }
-};console.log('Admin.js loaded successfully
+};
+
+console.log('Admin.js loaded successfully
